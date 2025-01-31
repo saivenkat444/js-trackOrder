@@ -15,36 +15,44 @@ const display = (startTime, message, orderDetails = "") => {
 const prepareDelivery = (startTime, orderDetails) => {
   const updatedOrder = updateOrder(
     orderDetails,
-    "delivery details",
+    "deliveryDetails",
     "delivered by john at 7:30 PM"
   );
   display(startTime, "order delivered: ", updatedOrder);
 };
 
 const preparingDelivery = (startTime, orderDetails) => {
-  display(startTime, "Delivering order....");
+  display(startTime, "Delivering order...");
   setTimeout(prepareDelivery, 5000, startTime, { ...orderDetails });
 };
 
 const preparePack = (startTime, orderDetails) => {
-  const updatedOrder = updateOrder(orderDetails, "package", "packed bruh");
+  const updatedOrder = updateOrder(
+    orderDetails,
+    "packageDetails",
+    "packed in eco-friendly box"
+  );
   display(startTime, "Order packed:", updatedOrder);
   preparingDelivery(startTime, updatedOrder);
 };
 
 const preparingPack = (startTime, orderDetails) => {
-  display(startTime, "Packing order....");
+  display(startTime, "Packing order...");
   setTimeout(preparePack, 2000, startTime, { ...orderDetails });
 };
 
 const prepareFood = (startTime, orderDetails) => {
-  const updatedOrder = updateOrder(orderDetails, "food", "fries");
+  const updatedOrder = updateOrder(
+    orderDetails,
+    "foodDetails",
+    "Burger & fries"
+  );
   display(startTime, "Food is ready:", updatedOrder);
   preparingPack(startTime, updatedOrder);
 };
 
 const preparingFood = (startTime, orderDetails) => {
-  display(startTime, "Preparing food....");
+  display(startTime, "Preparing food...");
   setTimeout(prepareFood, 3000, startTime, { ...orderDetails });
 };
 
