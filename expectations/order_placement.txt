@@ -1,1 +1,3 @@
-
+start the time when main is called and give the order id
+during the process should give me a message that the food is being prepared
+just send back the order id, 

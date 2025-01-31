@@ -1,5 +1,5 @@
 const main = () => {
-  const {}
+  const { startTime, orderId } = placeOrder();
   //place order and have the order id and details
   //food prep detail
   //packing details
